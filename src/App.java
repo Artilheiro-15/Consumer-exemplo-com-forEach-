@@ -1,6 +1,7 @@
 import entities.Product;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class App {
 
@@ -13,9 +14,14 @@ public class App {
     list.add(new Product("Tablet", 350.50));
     list.add(new Product("HD Case", 80.90));
 
-    //vamos falar agora de um metudo defull na interface list chamado forEach
+    double factor = 1.1;
 
-    list.forEach(Product::nonStaticPriceUpdate);
+    Consumer<Product> cons = p -> {
+      p.setPrice(p.getPrice() * factor);
+    };
+
+    //vamos falar agora de um metudo defull na interface list chamado forEach
+    list.forEach(cons);
 
     list.forEach(System.out::println);
 
