@@ -1,7 +1,6 @@
 import entities.Product;
 import java.util.ArrayList;
 import java.util.List;
-import util.PriceUpdate;
 
 public class App {
 
@@ -16,7 +15,7 @@ public class App {
 
     //vamos falar agora de um metudo defull na interface list chamado forEach
 
-    list.forEach(new PriceUpdate());
+    list.forEach(Product::staticPriceUpdate);
 
     list.forEach(System.out::println);
 
