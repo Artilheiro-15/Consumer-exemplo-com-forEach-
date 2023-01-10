@@ -15,7 +15,7 @@ public class App {
 
     //vamos falar agora de um metudo defull na interface list chamado forEach
 
-    list.forEach(Product::staticPriceUpdate);
+    list.forEach(Product::nonStaticPriceUpdate);
 
     list.forEach(System.out::println);
 
